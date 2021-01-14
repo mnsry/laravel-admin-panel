@@ -12,8 +12,7 @@
 ## <div align="right">راهنمای نصب</div>
 
 <div align="right">
-<a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank">آموزش تصویری در کانال یوتیوب</a>
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [آموزش تصویری در کانال یوتیوب](https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz).
 - ابتدا `فورک` کنید.
 
 </div>
