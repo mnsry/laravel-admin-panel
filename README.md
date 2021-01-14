@@ -4,12 +4,11 @@
 <a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank"><img src="public/images/youtube.png" width="114"  alt="youtube"></a>
 <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="public/images/license.png" width="100" alt="License"></a>
 </p>
+<hr>
 
-## Laravel
+<p align="center">پنل ادمین با لاراول و ناکست جی اس و ویوتی فای</p>
 
-<p align="center">پروژه پنل ادمین با لاراول و ناکست جی اس و ویوتی فای</p>
 
-## install
 <p align="right">راهنمای نصب</p>
 
 <p align="right">راهنمای نصب</p>
