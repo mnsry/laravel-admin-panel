@@ -9,7 +9,7 @@
 
 <p align="center">پنل ادمین با لاراول و ناکست جی اس و ویوتی فای</p>
 
-## <p align="right">راهنمای نصب</p>
+## <span align="right">راهنمای نصب</span>
 
 <div align="right">
 <a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank">آموزش تصویری در کانال یوتیوب</a>
