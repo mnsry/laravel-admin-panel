@@ -9,10 +9,11 @@
 <p align="center">پروژه پنل ادمین با لاراول و ناکست جی اس و ویوتی فای</p>
 
 ## install
-<p align="center">راهنمای نصب</p>
+<p align="right">راهنمای نصب</p>
 
-- <p align="center">راهنمای نصب</p>
-- <p align="center">راهنمای نصب</p>
+<p align="right">راهنمای نصب</p>
+
+<p align="right">راهنمای نصب</p>
 
 ## Learning Laravel
 
