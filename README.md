@@ -1,6 +1,7 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
+<a href="https://www.laranuxt.ir" target="_blank"><img src="public/images/www.png" width="114"  alt="youtube"></a>
 <a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank"><img src="public/images/youtube.png" width="114"  alt="youtube"></a>
 <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="public/images/license.png" width="100" alt="License"></a>
 </p>
@@ -13,7 +14,7 @@
 
 <div align="right">
 <p><a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank">آموزش تصویری در کانال یوتیوب</a></p>
-<p>ابتدا `فورک` کنید.</p>
+<p></p>
 </div>
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
