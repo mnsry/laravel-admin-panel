@@ -19,5 +19,5 @@
 </div>
 
 ## <div align="right">مجوز برنامه</div>
-<p align="right">این پنل ادمین کد باز هست و تحت مجوز  <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a></p>
+<p align="right"><a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>این پنل ادمین کد باز هست و تحت مجوز</p>
 
