@@ -2,7 +2,7 @@
 
 <p align="center">
 <a href="https://www.laranuxt.ir" target="_blank"><img src="public/images/www.png" width="114"  alt="youtube"></a>
-<a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank"><img src="public/images/youtube.png" width="114"  alt="youtube"></a>
+<a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank"><img src="public/images/youtube.png" width="113"  alt="youtube"></a>
 <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="public/images/license.png" width="100" alt="License"></a>
 </p>
 
