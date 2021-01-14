@@ -4,18 +4,19 @@
 <a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank"><img src="public/images/youtube.png" width="114"  alt="youtube"></a>
 <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="public/images/license.png" width="100" alt="License"></a>
 </p>
+
 <hr>
 
 <p align="center">پنل ادمین با لاراول و ناکست جی اس و ویوتی فای</p>
 
-
 <p align="right">راهنمای نصب</p>
 
-<p align="right">راهنمای نصب</p>
+##
 
-<p align="right">راهنمای نصب</p>
-
-## Learning Laravel
+<div align="right">
+<a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank">آموزش تصویری در کانال یوتیوب</a>
+<p>لطفا پروزه را `فورک` کنید</p>
+</div>
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
