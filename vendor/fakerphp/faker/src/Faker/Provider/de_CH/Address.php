@@ -4,7 +4,7 @@ namespace Faker\Provider\de_CH;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = ['###', '##', '#', '##[abc]', '#[abc]'];
+    protected static $buildingNumber = ['%##', '%#', '%', '##[abc]', '#[abc]'];
 
     protected static $streetSuffixLong = [
         'Gasse', 'Platz', 'Ring', 'Strasse', 'Weg', 'Allee'
@@ -57,7 +57,7 @@ class Address extends \Faker\Provider\Address
         ['GE' => 'Genf'],
         ['GL' => 'Glarus'],
         ['GR' => 'Graubünden'],
-        ['JU' => 'Jura',],
+        ['JU' => 'Jura'],
         ['LU' => 'Luzern'],
         ['NE' => 'Neuenburg'],
         ['NW' => 'Nidwalden'],

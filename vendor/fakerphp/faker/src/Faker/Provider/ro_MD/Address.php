@@ -4,7 +4,7 @@ namespace Faker\Provider\ro_MD;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = ['###', '##', '#', '#/#', '#A', '#B'];
+    protected static $buildingNumber = ['%##', '%#', '%', '%/#', '#A', '#B'];
     protected static $apartmentNumber = ['#', '##'];
     protected static $floor = ['#', '##'];
     protected static $block = ['#', '##', 'A', 'B', 'C', 'D'];
@@ -82,7 +82,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $addressFormats = [
-        "{{streetAddress}}, {{city}}, CP {{postcode}}",
+        '{{streetAddress}}, {{city}}, CP {{postcode}}',
     ];
 
     public function cityName()
@@ -121,29 +121,5 @@ class Address extends \Faker\Provider\Address
     public function streetPlainName()
     {
         return static::randomElement(static::$streetPlainName);
-    }
-
-    /**
-     * @example 'Splaiul Independenței'
-     */
-    public function streetName()
-    {
-        $format = static::randomElement(static::$streetNameFormats);
-
-        return $this->generator->parse($format);
-    }
-
-    public function address()
-    {
-        $format = static::randomElement(static::$addressFormats);
-
-        return $this->generator->parse($format);
-    }
-
-    public function streetAddress()
-    {
-        $format = static::randomElement(static::$streetAddressFormats);
-
-        return $this->generator->parse($format);
     }
 }

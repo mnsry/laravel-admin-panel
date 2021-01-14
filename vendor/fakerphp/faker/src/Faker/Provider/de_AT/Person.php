@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\de_AT;
 
+use Faker\Provider\DateTime;
+
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = [
@@ -26,7 +28,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * 60 most popular names in 1985, 1995, 2005 and 2015
-     * {@link} http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_PDF_FILE&RevisionSelectionMethod=LatestReleased&dDocName=021130
+     * {@link} https://www.statistik.at/wcm/idc/idcplg?IdcService=GET_NATIVE_FILE&RevisionSelectionMethod=LatestReleased&dDocName=115199
      **/
     protected static $firstNameMale = [
         'Adrian', 'Alexander', 'Andreas', 'Anton',
@@ -53,7 +55,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * 60 most popular names in 1985, 1995, 2005 and 2015
-     * {@link} http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_PDF_FILE&RevisionSelectionMethod=LatestReleased&dDocName=021130
+     * {@link} https://www.statistik.at/wcm/idc/idcplg?IdcService=GET_NATIVE_FILE&RevisionSelectionMethod=LatestReleased&dDocName=115199
      **/
     protected static $firstNameFemale = [
         'Alexandra', 'Alexandrea', 'Algelika', 'Alina', 'Amelie', 'Andrea', 'Angelina', 'Anita', 'Anja', 'Anna', 'Anna-Lena', 'Annika', 'Astrid',
@@ -79,7 +81,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Top 500 Names from a phone directory (February 2004)
-     * {@link} https://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_Nachnamen_Deutschlands
+     * {@link} https://de.wiktionary.org/w/index.php?title=Verzeichnis:Deutsch/Namen/die_h%C3%A4ufigsten_Nachnamen_%C3%96sterreichs
      **/
     protected static $lastName = [
         'Abraham', 'Achleitner', 'Adam', 'Aichinger', 'Aigner', 'Albrecht', 'Altmann', 'Amann', 'Amon', 'Angerer', 'Arnold', 'Artner', 'Aschauer', 'Auer', 'Augustin', 'Auinger',
@@ -116,5 +118,36 @@ class Person extends \Faker\Provider\Person
     public static function suffix()
     {
         return static::randomElement(static::$suffix);
+    }
+
+    /**
+     * Generates a random Austrian Social Security number.
+     * @link https://de.wikipedia.org/wiki/Sozialversicherungsnummer#.C3.96sterreich
+     * @param  \DateTime|null  $birthdate
+     * @return string
+     */
+    public static function ssn(\DateTime $birthdate = null)
+    {
+        $birthdate = $birthdate ?? DateTime::dateTimeThisCentury();
+
+        $birthDateString = $birthdate->format('dmy');
+
+        do {
+            $consecutiveNumber = (string) self::numberBetween(100, 999);
+
+            $verificationNumber = (
+                (int) $consecutiveNumber[0] * 3
+                    + (int) $consecutiveNumber[1] * 7
+                    + (int) $consecutiveNumber[2] * 9
+                    + (int) $birthDateString[0] * 5
+                    + (int) $birthDateString[1] * 8
+                    + (int) $birthDateString[2] * 4
+                    + (int) $birthDateString[3] * 2
+                    + (int) $birthDateString[4] * 1
+                    + (int) $birthDateString[5] * 6
+            ) % 11;
+        } while ($verificationNumber == 10);
+
+        return sprintf('%s%s%s', $consecutiveNumber, $verificationNumber, $birthDateString);
     }
 }

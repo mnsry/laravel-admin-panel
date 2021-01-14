@@ -6,7 +6,7 @@ class Lorem extends Base
 {
     protected static $wordList = [
         'alias', 'consequatur', 'aut', 'perferendis', 'sit', 'voluptatem',
-        'accusantium', 'doloremque', 'aperiam', 'eaque','ipsa', 'quae', 'ab',
+        'accusantium', 'doloremque', 'aperiam', 'eaque', 'ipsa', 'quae', 'ab',
         'illo', 'inventore', 'veritatis', 'et', 'quasi', 'architecto',
         'beatae', 'vitae', 'dicta', 'sunt', 'explicabo', 'aspernatur', 'aut',
         'odit', 'aut', 'fugit', 'sed', 'quia', 'consequuntur', 'magni',
@@ -198,6 +198,6 @@ class Lorem extends Base
 
     protected static function randomizeNbElements($nbElements)
     {
-        return (int) ($nbElements * mt_rand(60, 140) / 100) + 1;
+        return (int) ($nbElements * self::numberBetween(60, 140) / 100) + 1;
     }
 }

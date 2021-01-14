@@ -736,11 +736,12 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
             $result = $this->createResult();
         }
 
-        if (!$this instanceof WarningTestCase) {
+        if (!$this instanceof ErrorTestCase && !$this instanceof WarningTestCase) {
             $this->setTestResultObject($result);
         }
 
-        if (!$this instanceof WarningTestCase &&
+        if (!$this instanceof ErrorTestCase &&
+            !$this instanceof WarningTestCase &&
             !$this instanceof SkippedTestCase &&
             !$this->handleDependencies()) {
             return $result;
@@ -933,17 +934,6 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     public function setGroups(array $groups): void
     {
         $this->groups = $groups;
-    }
-
-    /**
-     * @internal This method is not covered by the backward compatibility promise for PHPUnit
-     */
-    public function getAnnotations(): array
-    {
-        return TestUtil::parseTestMethodAnnotations(
-            static::class,
-            $this->name
-        );
     }
 
     /**
@@ -2448,7 +2438,10 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
 
     private function setDoesNotPerformAssertionsFromAnnotation(): void
     {
-        $annotations = $this->getAnnotations();
+        $annotations = TestUtil::parseTestMethodAnnotations(
+            static::class,
+            $this->name
+        );
 
         if (isset($annotations['method']['doesNotPerformAssertions'])) {
             $this->doesNotPerformAssertions = true;

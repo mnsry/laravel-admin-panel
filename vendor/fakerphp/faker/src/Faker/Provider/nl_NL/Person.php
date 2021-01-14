@@ -31,7 +31,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     protected static $prefix = ["'s", "'t", 'a', 'aan', "aan 't", 'aan de', 'aan den', 'aan der', 'aan het',
-        "aan t", 'af', 'al', 'am', 'am de', 'auf', 'auf dem', 'auf den', 'auf der', 'auf ter', 'aus', "aus 'm",
+        'aan t', 'af', 'al', 'am', 'am de', 'auf', 'auf dem', 'auf den', 'auf der', 'auf ter', 'aus', "aus 'm",
         'aus dem', 'aus den', 'aus der', 'aus m', 'ben', 'bij', "bij 't", 'bij de', 'bij den', 'bij het', 'bij t',
         'bin', 'boven d', "boven d'", 'd', "d'", 'da', 'dal', 'dal’', 'dalla', 'das', 'de', 'de die', 'de die le',
         'de l', 'de l’', 'de la', 'de las', 'de le', 'de van der', 'deca', 'degli', 'dei', 'del', 'della', 'den',
@@ -264,7 +264,7 @@ class Person extends \Faker\Provider\Person
      */
     public function lastName()
     {
-        $determinator = static::numberBetween(0, 25);
+        $determinator = self::numberBetween(0, 25);
         if ($determinator === 0) {
             $lastName = static::randomElement(static::$longLastNames);
         } elseif ($determinator <= 10) {
@@ -307,7 +307,7 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$suffix);
     }
 
-    /*
+    /**
      * @example 'van der'
      */
     public static function prefix()
@@ -322,13 +322,12 @@ class Person extends \Faker\Provider\Person
      */
     public function idNumber()
     {
-        $return = '';
         $nr     = [];
         $nr[]   = 0;
         while (count($nr) < 8) {
             $nr[] = static::randomDigit();
         }
-        $nr[] = mt_rand(0, 6);
+        $nr[] = self::numberBetween(0, 6);
         if ($nr[7] == 0 && $nr[8] == 0) {
             $nr[7] = 0;
         }

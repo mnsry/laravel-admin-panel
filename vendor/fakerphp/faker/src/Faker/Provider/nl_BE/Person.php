@@ -34,7 +34,7 @@ class Person extends \Faker\Provider\Person
         'Malak', 'Manon', 'Margaux', 'Margot', 'Marie', 'Marion', 'Maya', 'Merel',
         'Mila', 'Nina', 'Noa', 'Noémie', 'Noor', 'Nora', 'Océane', 'Olivia', 'Pauline',
         'Rania', 'Robin', 'Romane', 'Roos', 'Salma', 'Sara', 'Sarah', 'Senne',
-        'Siebe', 'Sofia','Tess', 'Victoria', 'Wout', 'Yana', 'Yasmine', 'Zoé', 'Zoë'
+        'Siebe', 'Sofia', 'Tess', 'Victoria', 'Wout', 'Yana', 'Yasmine', 'Zoé', 'Zoë'
     ];
 
     protected static $lastName = [
@@ -98,7 +98,7 @@ class Person extends \Faker\Provider\Person
         $dob = sprintf('%06d', $date->format('ymd'));
         $help = $date->format('Y') >= 2000 ? 2 : null;
 
-        $check = intval($help . $dob . $middle);
+        $check = (int) ($help . $dob . $middle);
         $rest = sprintf('%02d', 97 - ($check % 97));
 
         return $dob . $middle . $rest;

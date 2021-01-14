@@ -58,7 +58,7 @@ class Person extends \Faker\Provider\Person
         'Olivia',
         'Patricia', 'Paula', 'Pauline', 'Phoebe', 'Poppy',
         'Rachel', 'Rebecca', 'Rosie', 'Rowena', 'Roxanne', 'Ruby', 'Ruth',
-        'Sabrina', 'Sally', 'Samantha', 'Sarah', 'Sasha', 'Scarlett', 'Selina', 'Shannon', 'Sienna', 'Sofia', 'Sonia', 'Sophia', 'Sophie', 'Stacey', 'Stephanie','Suzanne', 'Summer',
+        'Sabrina', 'Sally', 'Samantha', 'Sarah', 'Sasha', 'Scarlett', 'Selina', 'Shannon', 'Sienna', 'Sofia', 'Sonia', 'Sophia', 'Sophie', 'Stacey', 'Stephanie', 'Suzanne', 'Summer',
         'Tanya', 'Tara', 'Teagan', 'Theresa', 'Tiffany', 'Tina', 'Tracy',
         'Vanessa', 'Vicky', 'Victoria',
         'Wendy',
@@ -90,4 +90,23 @@ class Person extends \Faker\Provider\Person
         'Walker', 'Walsh', 'Ward', 'Watson', 'White', 'Wilkinson', 'Williams', 'Wilson', 'Wood', 'Wright',
         'Young',
     ];
+
+    /**
+     * Generates a random National Insurance number.
+     * @link https://www.gov.uk/hmrc-internal-manuals/national-insurance-manual/nim39110
+     */
+    public function nino(): string
+    {
+        $prefixAllowList = ['A', 'B', 'C', 'E', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z'];
+        $prefixBanList = ['BG', 'GB', 'KN', 'NK', 'NT', 'TN', 'ZZ'];
+
+        do {
+            $prefix = implode('', self::randomElements($prefixAllowList, 2, true));
+        } while (in_array($prefix, $prefixBanList) || $prefix[1] == 'O');
+
+        $digits = static::numerify('######');
+        $suffix = static::randomElement(['A', 'B', 'C', 'D']);
+
+        return sprintf('%s%s%s', $prefix, $digits, $suffix);
+    }
 }

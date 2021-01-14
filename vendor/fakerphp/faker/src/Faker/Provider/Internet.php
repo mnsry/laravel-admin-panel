@@ -31,6 +31,15 @@ class Internet extends Base
     ];
 
     /**
+     * @link https://tools.ietf.org/html/rfc1918#section-3
+     */
+    protected static $localIpBlocks = [
+        ['10.0.0.0', '10.255.255.255'],
+        ['172.16.0.0', '172.31.255.255'],
+        ['192.168.0.0', '192.168.255.255'],
+    ];
+
+    /**
      * @example 'jdoe@acme.biz'
      */
     public function email()
@@ -171,7 +180,7 @@ class Internet extends Base
             return '';
         }
         if ($variableNbWords) {
-            $nbWords = (int) ($nbWords * mt_rand(60, 140) / 100) + 1;
+            $nbWords = (int) ($nbWords * self::numberBetween(60, 140) / 100) + 1;
         }
         $words = $this->generator->words($nbWords);
 
@@ -183,7 +192,7 @@ class Internet extends Base
      */
     public function ipv4()
     {
-        return long2ip(mt_rand(0, 1) == 0 ? mt_rand(-2147483648, -2) : mt_rand(16777216, 2147483647));
+        return long2ip(Miscellaneous::boolean() ? self::numberBetween(-2147483648, -2) : self::numberBetween(16777216, 2147483647));
     }
 
     /**
@@ -193,7 +202,7 @@ class Internet extends Base
     {
         $res = [];
         for ($i=0; $i < 8; $i++) {
-            $res []= dechex(mt_rand(0, "65535"));
+            $res []= dechex(self::numberBetween(0, 65535));
         }
 
         return implode(':', $res);
@@ -204,13 +213,9 @@ class Internet extends Base
      */
     public static function localIpv4()
     {
-        if (static::numberBetween(0, 1) === 0) {
-            // 10.x.x.x range
-            return long2ip(static::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
-        }
+        $ipBlock = self::randomElement(static::$localIpBlocks);
 
-        // 192.168.x.x range
-        return long2ip(static::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
+        return long2ip(static::numberBetween(ip2long($ipBlock[0]), ip2long($ipBlock[1])));
     }
 
     /**
@@ -221,7 +226,7 @@ class Internet extends Base
         $mac = [];
 
         for ($i=0; $i < 6; $i++) {
-            $mac[] = sprintf('%02X', static::numberBetween(0, 0xff));
+            $mac[] = sprintf('%02X', self::numberBetween(0, 0xff));
         }
 
         return implode(':', $mac);

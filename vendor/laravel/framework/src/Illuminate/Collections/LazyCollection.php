@@ -846,6 +846,24 @@ class LazyCollection implements Enumerable
     }
 
     /**
+     * Reduce an associative collection to a single value.
+     *
+     * @param  callable  $callback
+     * @param  mixed $initial
+     * @return mixed
+     */
+    public function reduceWithKeys(callable $callback, $initial = null)
+    {
+        $result = $initial;
+
+        foreach ($this as $key => $value) {
+            $result = $callback($result, $value, $key);
+        }
+
+        return $result;
+    }
+
+    /**
      * Replace the collection items with the given items.
      *
      * @param  mixed  $items
@@ -1055,6 +1073,17 @@ class LazyCollection implements Enumerable
                 $iterator->next();
             }
         });
+    }
+
+    /**
+     * Split a collection into a certain number of groups, and fill the first groups completely.
+     *
+     * @param  int  $numberOfGroups
+     * @return static
+     */
+    public function splitIn($numberOfGroups)
+    {
+        return $this->chunk(ceil($this->count() / $numberOfGroups));
     }
 
     /**
