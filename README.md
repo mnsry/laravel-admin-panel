@@ -12,7 +12,7 @@
 ## <div align="right">راهنمای نصب</div>
 
 <div align="right">
-- [آموزش تصویری در کانال یوتیوب](https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz).
+<a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank">آموزش تصویری در کانال یوتیوب</a>
 - ابتدا `فورک` کنید.
 
 </div>
