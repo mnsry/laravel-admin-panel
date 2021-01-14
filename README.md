@@ -15,7 +15,9 @@
 
 <div align="right">
 <p><a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank">آموزش تصویری در کانال یوتیوب</a></p>
-<p></p>
+<p>
+اگر توسعه دهنده هستید می توانید پروژه را فورک کنید و درنهایت برای من پول ریکوئست ارسال کنید تا از کدهای شما هم دیگران بتوانند استفاده کنند.
+</p>
 </div>
 
 ## <div align="right">مجوز برنامه</div>
