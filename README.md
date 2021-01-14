@@ -8,18 +8,11 @@
 
 <p align="center">پروژه پنل ادمین با لاراول و ناکست جی اس و ویوتی فای</p>
 
+## install
 <p align="center">راهنمای نصب</p>
 
-## install
-
-- [آموزش تصویری در کانال یوتیوب](https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- <p align="center">راهنمای نصب</p>
+- <p align="center">راهنمای نصب</p>
 
 ## Learning Laravel
 
