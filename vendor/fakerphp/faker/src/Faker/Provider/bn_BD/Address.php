@@ -285,7 +285,7 @@ class Address extends \Faker\Provider\Address
         '{{streetNumber}} {{streetName}}',
     ];
     protected static $addressFormats = [
-        "{{streetAddress}}, {{city}} {{state}}",
+        '{{streetAddress}}, {{city}} {{state}}',
     ];
 
     public static function cityPrefix()
@@ -300,7 +300,7 @@ class Address extends \Faker\Provider\Address
 
     public static function streetNumber()
     {
-        return Utils::getBanglaNumber(static::numberBetween(1, 100));
+        return Utils::getBanglaNumber(self::numberBetween(1, 100));
     }
 
     public static function banglaStreetName()

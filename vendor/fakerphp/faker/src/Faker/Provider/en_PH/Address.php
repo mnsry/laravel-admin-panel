@@ -13,7 +13,7 @@ class Address extends \Faker\Provider\en_US\Address
         '{{streetAddress}}, {{barangay}}, {{city}} {{postcode}} {{province}}', '{{streetAddress}}, {{municipality}} {{postcode}} {{province}}'
     ];
 
-    protected static $buildingNumber = ['##A', '##', '##A/##', '##/##'];
+    protected static $buildingNumber = ['##A', '%#', '##A/##', '%#/%#'];
     protected static $postcode = ['####'];
 
     //http://en.wikipedia.org/wiki/Provinces_of_the_Philippines
@@ -64,9 +64,9 @@ class Address extends \Faker\Provider\en_US\Address
         'Tanjay', 'Cabanatuan', 'Gapan', 'Muñoz', 'Palayan', 'San Jose',
         'Calapan', 'Puerto Princesa', 'Angeles', 'Mabalacat',
         'San Fernando', 'Alaminos', 'Dagupan', 'San Carlos',
-        'Urdaneta', 'Lucena', 'Tayabas', 'Antipolo','Calbayog', 'Catbalogan',
+        'Urdaneta', 'Lucena', 'Tayabas', 'Antipolo', 'Calbayog', 'Catbalogan',
         'Sorsogon City', 'General Santos', 'Koronadal', 'Maasin', 'Tacurong',
-        'Surigao City', 'Bislig', 'Tandag', 'Tarlac City','Olongapo',
+        'Surigao City', 'Bislig', 'Tandag', 'Tarlac City', 'Olongapo',
         'Dapitan', 'Dipolog', 'Pagadian', 'Zamboanga City'
     ];
 

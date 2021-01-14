@@ -14,6 +14,9 @@ namespace Faker;
  * @method string title(string $gender = null)
  * @property string $titleMale
  * @property string $titleFemale
+ * @property string $bloodType
+ * @property string $bloodRh
+ * @property string $bloodGroup
  *
  * @property string $citySuffix
  * @property string $streetSuffix
@@ -216,11 +219,7 @@ class Generator
         if ($seed === null) {
             mt_srand();
         } else {
-            if (PHP_VERSION_ID < 70100) {
-                mt_srand((int) $seed);
-            } else {
-                mt_srand((int) $seed, MT_RAND_PHP);
-            }
+            mt_srand((int) $seed, MT_RAND_PHP);
         }
     }
 
@@ -289,5 +288,10 @@ class Generator
     public function __destruct()
     {
         $this->seed();
+    }
+
+    public function __wakeup()
+    {
+        $this->formatters = [];
     }
 }

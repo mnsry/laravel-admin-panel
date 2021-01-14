@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\nl_NL;
 
+use Faker\Provider\Miscellaneous;
+
 class Company extends \Faker\Provider\Company
 {
     /**
@@ -37,7 +39,7 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $companySuffix = [
-        'VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL','EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn'
+        'VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn'
     ];
 
     protected static $product = [
@@ -69,7 +71,7 @@ class Company extends \Faker\Provider\Company
      */
     public function company()
     {
-        $determinator = static::numberBetween(0, 2);
+        $determinator = self::numberBetween(0, 2);
         switch ($determinator) {
             case 0:
                 $companyName = static::randomElement(static::$product) . ' ' . static::randomElement(static::$type);
@@ -82,7 +84,7 @@ class Company extends \Faker\Provider\Company
                 break;
         }
 
-        if (0 !== static::numberBetween(0, 1)) {
+        if (Miscellaneous::boolean()) {
             return $companyName . ' ' . static::randomElement(static::$companySuffix);
         }
 
@@ -94,13 +96,13 @@ class Company extends \Faker\Provider\Company
      *
      * @example 'NL123456789B01'
      *
-     * @see http://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/administratie_bijhouden/btw_nummers_controleren/uw_btw_nummer
+     * @see https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/administratie_bijhouden/btw_nummers_controleren/uw_btw_nummer
      *
      * @return string VAT Number
      */
     public static function vat()
     {
-        return sprintf("%s%d%s%d", 'NL', self::randomNumber(9, true), 'B', self::randomNumber(2, true));
+        return sprintf('%s%d%s%d', 'NL', self::randomNumber(9, true), 'B', self::randomNumber(2, true));
     }
 
     /**

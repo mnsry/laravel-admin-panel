@@ -16,9 +16,8 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastName}}',
     ];
 
-    /*
-     *
-     * {@link} http://www.armeniapedia.org/wiki/Armenian_Male_Names
+    /**
+     * @link http://www.armeniapedia.org/wiki/Armenian_Male_Names
      */
     protected static $firstNameMale = [
         'Աբգար', 'Աբէլ', 'Ազատ', 'Ազնաւուր', 'Ազնուական', 'Ալիշան', 'Ակնունի', 'Աղան', 'Աղասի', 'Ամարաս', 'Այգեկ', 'Անակ',
@@ -55,9 +54,8 @@ class Person extends \Faker\Provider\Person
         'Քաջայր', 'Քերովբէ', 'Քրիստափոր', 'Օգսէն', 'Օհան', 'Օնէ', 'Օննիկ', 'Օշին', 'Օշական', 'Օտա'
     ];
 
-    /*
-     *
-     * {@link} http://www.armeniapedia.org/wiki/Armenian_Female_Names
+    /**
+     * @link http://www.armeniapedia.org/wiki/Armenian_Female_Names
      */
     protected static $firstNameFemale = [
         'Ազատուհի', 'Ազգանոյշ', 'Ազնիւ', 'Ալիծ', 'Ալին', 'Ալիս', 'Ալիք', 'Ալվարդ', 'Աղաւնի', 'Աղբիւր', 'Աղուոր', 'Ամանոր', 'Այծեամ', 'Այծեմնիկ',
@@ -89,18 +87,18 @@ class Person extends \Faker\Provider\Person
     ];
 
     protected static $lastName = [
-        'Կարապետյան','Ասատրյան','Հովսեփյան','Մուրադյան','Հովհաննիսյան',
-        'Աբգարյան','Գրիգորյան','Կարապետյան','Հայրապետյան','Ավագյան',
-        'Պետրոսյան','Պողոսյան','Աբդալյան','Բադալյան','Մելիքյան','Մկրտչյան',
-        'Դարբինյան','Կիրակոսյան','Հակոբյան','Խաչատրյան','Վարդանյան',
-        'Համբարձումյան','Սարգսյան',
+        'Կարապետյան', 'Ասատրյան', 'Հովսեփյան', 'Մուրադյան', 'Հովհաննիսյան',
+        'Աբգարյան', 'Գրիգորյան', 'Կարապետյան', 'Հայրապետյան', 'Ավագյան',
+        'Պետրոսյան', 'Պողոսյան', 'Աբդալյան', 'Բադալյան', 'Մելիքյան', 'Մկրտչյան',
+        'Դարբինյան', 'Կիրակոսյան', 'Հակոբյան', 'Խաչատրյան', 'Վարդանյան',
+        'Համբարձումյան', 'Սարգսյան',
     ];
 
     protected static $titleMale = ['Պարոն'];
 
-    protected static $titleFemale = ['տիկին','օրիորդ'];
+    protected static $titleFemale = ['տիկին', 'օրիորդ'];
 
-    private static $suffix = ['',];
+    private static $suffix = [''];
 
     /**
      * @example 'PhD'

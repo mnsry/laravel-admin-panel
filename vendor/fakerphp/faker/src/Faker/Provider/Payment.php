@@ -7,12 +7,12 @@ use Faker\Calculator\Luhn;
 
 class Payment extends Base
 {
-    public static $expirationDateFormat = "m/y";
+    public static $expirationDateFormat = 'm/y';
 
     protected static $cardVendors = [
         'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
         'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
-        'American Express', 'Discover Card', 'Visa Retired'
+        'American Express', 'Discover Card', 'Visa Retired', 'JCB',
     ];
 
     /**
@@ -22,46 +22,50 @@ class Payment extends Base
      */
     protected static $cardParams = [
         'Visa' => [
-            "4539###########",
-            "4556###########",
-            "4916###########",
-            "4532###########",
-            "4929###########",
-            "40240071#######",
-            "4485###########",
-            "4716###########",
-            "4##############"
+            '4539###########',
+            '4556###########',
+            '4916###########',
+            '4532###########',
+            '4929###########',
+            '40240071#######',
+            '4485###########',
+            '4716###########',
+            '4##############'
         ],
         'Visa Retired' => [
-            "4539########",
-            "4556########",
-            "4916########",
-            "4532########",
-            "4929########",
-            "40240071####",
-            "4485########",
-            "4716########",
-            "4###########",
+            '4539########',
+            '4556########',
+            '4916########',
+            '4532########',
+            '4929########',
+            '40240071####',
+            '4485########',
+            '4716########',
+            '4###########',
         ],
         'MasterCard' => [
-            "2221###########",
-            "23#############",
-            "24#############",
-            "25#############",
-            "26#############",
-            "2720###########",
-            "51#############",
-            "52#############",
-            "53#############",
-            "54#############",
-            "55#############"
+            '2221###########',
+            '23#############',
+            '24#############',
+            '25#############',
+            '26#############',
+            '2720###########',
+            '51#############',
+            '52#############',
+            '53#############',
+            '54#############',
+            '55#############'
         ],
         'American Express' => [
-            "34############",
-            "37############"
+            '34############',
+            '37############'
         ],
         'Discover Card' => [
-            "6011###########"
+            '6011###########'
+        ],
+        'JCB' => [
+            '3528###########',
+            '3589###########',
         ],
     ];
 
@@ -146,9 +150,9 @@ class Payment extends Base
     /**
      * Returns the String of a credit card number.
      *
-     * @param string  $type      Supporting any of 'Visa', 'MasterCard', 'American Express', and 'Discover'
+     * @param string $type Supporting any of 'Visa', 'MasterCard', 'American Express', 'Discover' and 'JCB'
      * @param bool $formatted Set to true if the output string should contain one separator every 4 digits
-     * @param string  $separator Separator string for formatting card number. Defaults to dash (-).
+     * @param string $separator Separator string for formatting card number. Defaults to dash (-).
      * @return string
      *
      * @example '4485480221084675'
@@ -256,7 +260,7 @@ class Payment extends Base
             switch ($class) {
                 default:
                 case 'c':
-                    $result .= mt_rand(0, 100) <= 50 ? static::randomDigit() : strtoupper(static::randomLetter());
+                    $result .= Miscellaneous::boolean() ? static::randomDigit() : strtoupper(static::randomLetter());
                     break;
                 case 'a':
                     $result .= strtoupper(static::randomLetter());
@@ -281,6 +285,6 @@ class Payment extends Base
      */
     public static function swiftBicNumber()
     {
-        return self::regexify("^([A-Z]){4}([A-Z]){2}([0-9A-Z]){2}([0-9A-Z]{3})?$");
+        return self::regexify('^([A-Z]){4}([A-Z]){2}([0-9A-Z]){2}([0-9A-Z]{3})?$');
     }
 }

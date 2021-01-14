@@ -11,7 +11,7 @@ class Address extends \Faker\Provider\Address
         'iela', 'bulvāris', 'skvērs', 'gāte',
     ];
 
-    protected static $buildingNumber = ['##'];
+    protected static $buildingNumber = ['%#'];
     protected static $postcode = ['LV ####'];
 
     /**
@@ -48,8 +48,8 @@ class Address extends \Faker\Provider\Address
         'Kurzemes', 'Latgales', 'Rīgas', 'Vidzemes', 'Zemgales'
     ];
 
-    protected static $city = ['Aizkraukle' ,'Aluksne','Balvi', 'Bauska','Cesis',
-        'Daugavpils', 'Dobele','Gulbene', 'Jekabpils', 'Jelgava', 'Kraslava', 'Kuldiga', 'Liepaja',
+    protected static $city = ['Aizkraukle' , 'Aluksne', 'Balvi', 'Bauska', 'Cesis',
+        'Daugavpils', 'Dobele', 'Gulbene', 'Jekabpils', 'Jelgava', 'Kraslava', 'Kuldiga', 'Liepaja',
         'Limbazi', 'Ludza', 'Madona', 'Mobile Phones', 'Ogre', 'Preili', 'Rezekne', 'Rīga', 'Ventspils'
     ];
 
@@ -60,7 +60,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $addressFormats = [
-        "{{postcode}}, {{region}} {{regionSuffix}}, {{city}} {{cityPrefix}}, {{street}} {{streetPrefix}}, {{buildingNumber}}",
+        '{{postcode}}, {{region}} {{regionSuffix}}, {{city}} {{cityPrefix}}, {{street}} {{streetPrefix}}, {{buildingNumber}}',
     ];
 
     public static function buildingNumber()

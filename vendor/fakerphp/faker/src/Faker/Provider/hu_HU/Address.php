@@ -21,7 +21,7 @@ class Address extends \Faker\Provider\Address
         '{{streetName}} {{buildingNumber}}. {{secondaryAddress}}',
     ];
     protected static $addressFormats = [
-        "{{postcode}} {{city}}, {{streetAddress}}",
+        '{{postcode}} {{city}}, {{streetAddress}}',
     ];
     protected static $secondaryAddressFormats = ['##. emelet', '##. ajtó'];
 
@@ -65,7 +65,7 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$smallerCities);
     }
 
-    protected static $buildingNumber = ['###', '##', '##', '#'];
+    protected static $buildingNumber = ['%##', '%#', '%#', '%'];
 
     /**
      * Coordinates inside the border of Hungary

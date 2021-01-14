@@ -3,28 +3,17 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
 
-Route::get('nav/sidebar', function(){
-    $drawer = [
-        [
-            'text' => 'داشبورد',
-            'icon' => 'mdi-view-dashboard-variant',
-            'items' => [['text' => 'داشبورد']],
-        ],
-        [
-            'text' => 'کاربران',
-            'icon' => 'mdi-account-multiple',
-            'items' => [['text' => 'کاربران'],['text' => 'کاربران']],
-            'active' => true,
-        ],
-        [
-            'text' => 'اشتراک',
-            'icon' => 'mdi-account-multiple',
-            'items' => [['text' => 'اشتراک']],
-        ],
-    ];
-    return response()->json($drawer, 200);
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
 });

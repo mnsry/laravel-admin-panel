@@ -9,7 +9,7 @@ class Address extends \Faker\Provider\Address
     protected static $streetPrefix = [
         'вул.', 'пров.', 'пл.', 'просп.'
     ];
-    protected static $buildingNumber = ['##'];
+    protected static $buildingNumber = ['%#'];
     protected static $postcode = ['#####'];
     protected static $country = [
         'Афганістан',
@@ -290,11 +290,11 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $addressFormats = [
-        "{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{streetName}}, {{buildingNumber}}",
+        '{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{streetName}}, {{buildingNumber}}',
     ];
 
     protected static $streetAddressFormats = [
-        "{{streetPrefix}} {{streetName}}, {{buildingNumber}}"
+        '{{streetPrefix}} {{streetName}}, {{buildingNumber}}'
     ];
 
     public static function citySuffix()
@@ -347,7 +347,7 @@ class Address extends \Faker\Provider\Address
      */
     public function cityAndRegion()
     {
-        $regionAndCityNumber = mt_rand(0, count(static::$region) - 1);
+        $regionAndCityNumber = self::numberBetween(0, count(static::$region) - 1);
         $region = static::$region[$regionAndCityNumber];
         $city = static::$city[$regionAndCityNumber];
         $format = "$region {{regionSuffix}}, {{cityPrefix}} $city";
