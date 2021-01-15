@@ -44,7 +44,7 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * Custom Error Handler Return Json Message
+     * Custom Error Handler, Return Json Message
      *
      * @param $request
      * @param Throwable $exception
@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        // Custom Error For Not Found Route, Just For Route Model Binding
+        // Custom Error Just For Not Found Route Model Binding
         if ($exception instanceof ModelNotFoundException) {
             return response()->json(['message' => 'همچین مسیری وجود ندارد!'], 404);
         }
