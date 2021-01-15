@@ -1,8 +1,8 @@
 <p align="center">
-<a href="https://discord.gg/ENuwQP6H" target="_blank"><img src="public/images/discord.png" width="118"  alt="youtube"></a>
-<a href="https://www.laranuxt.ir" target="_blank"><img src="public/images/www.png" width="115"  alt="youtube"></a>
-<a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank"><img src="public/images/youtube.png" width="111"  alt="youtube"></a>
-<a href="https://opensource.org/licenses/MIT" target="_blank"><img src="public/images/license.png" width="98" alt="License"></a>
+<a href="https://discord.gg/ENuwQP6H" target="_blank"><img src="../../public/images/discord.png" width="118"  alt="youtube"></a>
+<a href="https://www.laranuxt.ir" target="_blank"><img src="../../public/images/www.png" width="115"  alt="youtube"></a>
+<a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank"><img src="../../public/images/youtube.png" width="111"  alt="youtube"></a>
+<a href="https://opensource.org/licenses/MIT" target="_blank"><img src="../../public/images/license.png" width="98" alt="License"></a>
 </p>
 
 <hr>
