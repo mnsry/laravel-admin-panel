@@ -4,13 +4,12 @@ namespace App\Http\Requests\Sidebar;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSidebar extends FormRequest
+class UpdateSidebar extends FormRequest
 {
-    public function authorize()
-    {
-        return true;
-    }
-
+    /**
+     * @note Validation For Edit Sidebar
+     * @see \App\Http\Controllers\Panel\SidebarController::update
+     */
     public function rules()
     {
         return [
@@ -18,5 +17,10 @@ class StoreSidebar extends FormRequest
             'prepend_icon' => 'required|min:5',
             'append_icon' => 'nullable',
         ];
+    }
+
+    public function authorize()
+    {
+        return true;
     }
 }
