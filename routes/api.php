@@ -6,12 +6,12 @@ use App\Http\Controllers\Panel\UserController;
 use App\Http\Controllers\Panel\SidebarController;
 use App\Http\Controllers\Panel\ProductController;
 
+/**
+ * @note Route Panel For CRUD
+ */
 Route::group(['middleware' => ['auth:sanctum', 'browse.admin']], function (){
     Route::apiResource('role', RoleController::class);
     Route::apiResource('user', UserController::class);
     Route::apiResource('sidebar', SidebarController::class);
     Route::apiResource('product', ProductController::class);
-});
-Route::get('test', function (){
-   return '021';
 });
