@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Schema;
 class CreateProductsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * @note Table: Product
+     * @note Relation: Whit User
      *
      * @return void
      */
