@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers\Panel;
 
+use App\Http\Resources\User\User as UserResource;
+use App\Http\Resources\Role\Role as RoleResource;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\User\UpdateUser;
+use App\Http\Requests\User\StoreUser;
 use App\Http\Controllers\Controller;
 use App\Models\User\User;
-use App\Http\Resources\User\User as UserResource;
-use App\Http\Requests\User\StoreUser;
-use App\Http\Requests\User\UpdateUser;
-use App\Http\Resources\Role\Role as RoleResource;
 use App\Models\Role\Role;
-use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
+    /**
+     * @note CRUD For Users
+     * @note You Should Have Key Permission , And We Use Of Api Resources
+     * @note You Can See Array Return, { @see \App\Http\Resources\User\User }
+     */
+
+    // Show All Users
     public function index()
     {
         $this->authorize('browse', User::class);
@@ -25,6 +32,7 @@ class UserController extends Controller
             ]);
     }
 
+    // Show One User
     public function show(User $user)
     {
         $this->authorize('read', User::class);
@@ -39,6 +47,7 @@ class UserController extends Controller
             ]);
     }
 
+    // Save One User
     public function store(StoreUser $request)
     {
         $this->authorize('add', User::class);
@@ -57,6 +66,7 @@ class UserController extends Controller
             ])->response()->setStatusCode(201);
     }
 
+    // Edit One User
     public function update(UpdateUser $request, User $user)
     {
         $this->authorize('edit', User::class);
@@ -83,6 +93,7 @@ class UserController extends Controller
             ]);
     }
 
+    // Delete One User
     public function destroy(User $user)
     {
         $this->authorize('delete', User::class);
