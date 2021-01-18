@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'مسعود منصوری',
             'family' => '-= M A N S O R Y =-',
-            'avatar' => 'https://lh3.googleusercontent.com/a-/AOh14Gh6o5FxjwQrV2C5BowqUtZt0sthocgTZvmzSMfG=s96-c-rg-br100',
+            'avatar' => 'mansory.gif',
             'mobile' => '09158007242',
             'email' => 'm@m.com',
             'email_verified_at' => now(),
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
             'name' => 'علی ریاضی',
             'family' => 'Ali Ronaldo',
             'avatar' => '',
-            'mobile' => '09156202629',
+            'mobile' => '09151234567',
             'email' => 'ali@ali.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
             'name' => 'رضا صادقی',
             'family' => 'Meshki Eshghe',
             'avatar' => '',
-            'mobile' => '09375615071',
+            'mobile' => '09157654321',
             'email' => 'reza@reza.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
