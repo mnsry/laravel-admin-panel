@@ -39,8 +39,15 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * @note When User Login, Can Get Bearer Code
+     *
+     * @param Request $request
+     * @param $user
+     * @return \Illuminate\Http\Response
+     */
     protected function authenticated(Request $request, $user)
     {
-        return response($user->createToken('token')->plainTextToken);
+        return response($user->createToken($request->userAgent())->plainTextToken);
     }
 }
