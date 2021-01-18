@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Schema;
 class CreatePersonalAccessTokensTable extends Migration
 {
     /**
-     * Run the migrations.
+     * @note Table: Token For User
+     * @note Relation: Whit User
      *
      * @return void
      */
