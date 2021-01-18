@@ -35,11 +35,18 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            /**
+             * @note If Use Two Domain, TurnOff VerifyCsrfToken
+             */
             // \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
         'api' => [
+            /**
+             * @note If Use Two Domain, TurnOff Sanctum Middleware
+             */
+            // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
@@ -62,7 +69,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'sanctum' => \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+        /**
+         * @note auth.key: Not Use In Project, Just For Test
+         * @note browse.admin: This Middleware Has 'browse_admin' Key Permission
+         */
         'auth.key' => \App\Http\Middleware\AuthKey::class,
         'browse.admin' => \App\Http\Middleware\BrowseAdmin::class,
     ];
