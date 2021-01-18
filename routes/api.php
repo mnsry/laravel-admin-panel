@@ -12,3 +12,6 @@ Route::group(['middleware' => ['auth:sanctum', 'browse.admin']], function (){
     Route::apiResource('sidebar', SidebarController::class);
     Route::apiResource('product', ProductController::class);
 });
+Route::get('test', function (){
+   return '021';
+});

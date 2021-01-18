@@ -37,28 +37,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Product::class);
     }
-
-    // You Person Blocking
-    public function blocking()
-    {
-        return $this->belongsToMany(User::class, 'user_blocks', 'user_blocking', 'user_blocked');
-    }
-
-    // Person You Blocked
-    public function blocked()
-    {
-        return $this->belongsToMany(User::class, 'user_blocks', 'user_blocked', 'user_blocking');
-    }
-
-    // You Person Following
-    public function following()
-    {
-        return $this->belongsToMany(User::class, 'user_followers', 'user_following', 'user_followed');
-    }
-
-    // Person You Followed
-    public function followed()
-    {
-        return $this->belongsToMany(User::class, 'user_followers', 'user_followed', 'user_following');
-    }
 }

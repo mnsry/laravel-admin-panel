@@ -11,7 +11,7 @@ Route::domain('storage.laranuxt.ir')->group(function () {
 Auth::routes();
 
 Route::get('/', function () {
-   return view('welcome');
+    return view('welcome');
 });
 
 Route::get('/home', function () {
