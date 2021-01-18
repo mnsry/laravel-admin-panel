@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Storage;
 
 class Product extends JsonResource
 {
+    /**
+     * @note Array Export, Whit All Relationships If Exist
+     *
+     * @param $request
+     * @return array
+     */
     public function toArray($request)
     {
         return [
@@ -14,8 +20,12 @@ class Product extends JsonResource
             'user_id' => $this->user_id,
             'title' => $this->title,
             'body' => $this->body,
-            'image' => Storage::url($this->image),
             'created_at' => $this->created_at,
+            /**
+             * @note Custom url() Address in { @see \config\filesystems } Line 58
+             * @note user has Relation
+             */
+            'image' => Storage::url($this->image),
             'user' => $this->user
         ];
     }

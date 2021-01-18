@@ -6,6 +6,13 @@ use App\Models\User\User;
 
 class ProductPolicy
 {
+    /**
+     * @note This Gate For Check Key Permission
+     *
+     * @param User $user
+     * @return bool
+     */
+
     public function browse(User $user)
     {
         return $user->hasPermission('browse_products');

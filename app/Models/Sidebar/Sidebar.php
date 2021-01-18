@@ -2,21 +2,18 @@
 
 namespace App\Models\Sidebar;
 
-use DateTimeInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Sidebar extends Model
 {
-    use HasFactory;
+    /**
+     * @note This Model Relation One Sidebar With Many { @see SidebarItem::sidebar }
+     */
 
+    // Add Column, If Column Use InTo Form
     protected $fillable = ['title', 'slug', 'prepend_icon', 'append_icon', 'active',];
 
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d');
-    }
-
+    // Relation One Sidebar With Many Model SidebarItem
     public function sidebarItems()
     {
         return $this->hasMany(SidebarItem::class);

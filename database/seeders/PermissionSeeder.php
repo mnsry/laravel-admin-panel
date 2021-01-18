@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 class PermissionSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * @note Create Key Permission
      *
      * @return void
      */

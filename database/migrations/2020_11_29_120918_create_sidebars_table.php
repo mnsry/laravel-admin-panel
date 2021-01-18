@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Schema;
 class CreateSidebarsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * @note Table: Sidebar
+     * @note Table: SidebarItem for sidebar
+     * @note Relation: Whit SidebarItem
      *
      * @return void
      */

@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers\Panel;
 
+use App\Http\Resources\Product\Product as ProductResource;
+use App\Http\Requests\Product\UpdateProduct;
+use App\Http\Requests\Product\StoreProduct;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Product\Product;
-use App\Http\Resources\Product\Product as ProductResource;
-use App\Http\Requests\Product\StoreProduct;
-use App\Http\Requests\Product\UpdateProduct;
-use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    /**
+     * @note CRUD For Products
+     * @note You Should Have Key Permission , And We Use Of Api Resources
+     * @note You Can See Array Return, { @see \App\Http\Resources\Product\Product }
+     */
+
+    // Show All Products
     public function index()
     {
         $this->authorize('browse', Product::class);
@@ -18,11 +25,12 @@ class ProductController extends Controller
         return (ProductResource::collection(Product::all()))
             ->additional([
                 'message'=>[
-                    ['پیام سرور: محصولات فرستاده شد']
+                    ['پیام سرور: محصولات را دریافت کنید.']
                 ]
             ]);
     }
 
+    // Show One Product
     public function show(Product $product)
     {
         $this->authorize('read', Product::class);
@@ -30,11 +38,12 @@ class ProductController extends Controller
         return (ProductResource::make(Product::find($product->id)))
             ->additional([
                 'message'=>[
-                    ['پیام سرور: محصول '.$product->title.' فرستاده شد.']
+                    ['پیام سرور: محصول '.$product->title.' را دریافت کنید.']
                 ]
             ]);
     }
 
+    // Save One Product, And Validate StoreProduct
     public function store(StoreProduct $request)
     {
         $this->authorize('add', Product::class);
@@ -55,6 +64,7 @@ class ProductController extends Controller
             ])->response()->setStatusCode(201);
     }
 
+    // Edit One Product, And Validate UpdateProduct
     public function update(UpdateProduct $request, Product $product)
     {
         $this->authorize('edit', Product::class);
@@ -80,6 +90,7 @@ class ProductController extends Controller
             ]);
     }
 
+    // Delete One Product
     public function destroy(Product $product)
     {
         $this->authorize('delete', Product::class);

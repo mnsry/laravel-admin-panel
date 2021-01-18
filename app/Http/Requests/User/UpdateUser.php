@@ -6,11 +6,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateUser extends FormRequest
 {
-    public function authorize()
-    {
-        return true;
-    }
-
+    /**
+     * @note Validation For Edit User
+     * @see \App\Http\Controllers\Panel\UserController::update
+     */
     public function rules()
     {
         return [
@@ -19,5 +18,10 @@ class UpdateUser extends FormRequest
             'mobile' => 'nullable|numeric',
             'avatar' => 'nullable|image'
         ];
+    }
+
+    public function authorize()
+    {
+        return true;
     }
 }

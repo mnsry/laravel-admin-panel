@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Schema;
 class CreateRolesTable extends Migration
 {
     /**
-     * Run the migrations.
+     * @note Table: role
+     * @note Pivot Table: role user
+     * @note Relation: Whit User
      *
      * @return void
      */

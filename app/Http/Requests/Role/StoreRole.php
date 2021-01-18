@@ -6,16 +6,20 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRole extends FormRequest
 {
-    public function authorize()
-    {
-        return true;
-    }
-
+    /**
+     * @note Validation For Save Role
+     * @see \App\Http\Controllers\Panel\RoleController::store
+     */
     public function rules()
     {
         return [
             'name' => 'required|min:4|unique:roles',
             'display_name' => 'required|min:5'
         ];
+    }
+
+    public function authorize()
+    {
+        return true;
     }
 }

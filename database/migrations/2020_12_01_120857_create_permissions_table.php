@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Schema;
 class CreatePermissionsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * @note Table: Permission
+     * @note Pivot Table: Permission Role
+     * @note Relation: Whit Role
      *
      * @return void
      */

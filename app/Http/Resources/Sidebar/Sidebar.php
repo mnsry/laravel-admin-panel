@@ -6,6 +6,12 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class Sidebar extends JsonResource
 {
+    /**
+     * @note Array Export, Whit All Relationships If Exist
+     *
+     * @param $request
+     * @return array
+     */
     public function toArray($request)
     {
         return [
@@ -16,6 +22,9 @@ class Sidebar extends JsonResource
             'append_icon' => $this->append_icon,
             'active' => $this->active,
             'created_at' => $this->created_at,
+            /**
+             * @note sidebarItems has Relation
+             */
             'sidebarItems' => $this->sidebarItems,
         ];
     }

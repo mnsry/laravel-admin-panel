@@ -9,7 +9,7 @@ use App\Models\Role\Permission;
 class RoleSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * @note Create Role
      *
      * @return void
      */

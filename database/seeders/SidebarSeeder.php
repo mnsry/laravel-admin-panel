@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 class SidebarSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * @note Create Sidebar
      *
      * @return void
      */

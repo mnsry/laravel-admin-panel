@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers\Panel;
 
-use App\Http\Controllers\Controller;
-use App\Models\Role\Role;
-use App\Models\Role\Permission;
 use App\Http\Resources\Role\Role as RoleResource;
-use App\Http\Requests\Role\StoreRole;
 use App\Http\Requests\Role\UpdateRole;
+use App\Http\Requests\Role\StoreRole;
+use App\Http\Controllers\Controller;
+use App\Models\Role\Permission;
+use App\Models\Role\Role;
 
 class RoleController extends Controller
 {
+    /**
+     * @note CRUD For Roles
+     * @note You Should Have Key Permission , And We Use Of Api Resources
+     * @note You Can See Array Return, { @see \App\Http\Resources\Role\Role }
+     */
+
+    // Show All Roles
     public function index()
     {
         $this->authorize('browse', Role::class);
@@ -23,6 +30,7 @@ class RoleController extends Controller
             ]);
     }
 
+    // Show One Role
     public function show(Role $role)
     {
         $this->authorize('read', Role::class);
@@ -38,6 +46,7 @@ class RoleController extends Controller
             ]);
     }
 
+    // Save One Role, And Validate StoreRole
     public function store(StoreRole $request)
     {
         $this->authorize('add', Role::class);
@@ -52,6 +61,7 @@ class RoleController extends Controller
             ])->response()->setStatusCode(201);
     }
 
+    // Edit One Role, And Validate UpdateRole
     public function update(UpdateRole $request, Role $role)
     {
         $this->authorize('edit', Role::class);
@@ -67,6 +77,7 @@ class RoleController extends Controller
             ]);
     }
 
+    // Delete One Role
     public function destroy(Role $role)
     {
         $this->authorize('delete', Role::class);

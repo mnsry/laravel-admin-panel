@@ -2,27 +2,25 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Closure;
 
 class BrowseAdmin
 {
     /**
-     * Handle an incoming request.
+     * @note For See Admin Panel, Should Have Key: 'browse_admin'
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param Request $request
+     * @param Closure $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
     {
         if (! Auth::guest()) {
             $user = Auth::user();
-            return $user->hasPermission('browse_admin')
-                        ? $next($request)
-                        : response()->json('شما دسترسی ندارید!', 403);
+            return $user->hasPermission('browse_admin') ? $next($request) : abort(403);
         }
-        return response()->json('ابتدا باید وارد شوید!', 401);
+        return abort(401, 'ابتدا باید وارد شوید!');
     }
 }

@@ -20,7 +20,8 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * @note For Old Mysql Version, Use defaultStringLength
+     * @note For Custom Model Token, Use usePersonalAccessTokenModel
      *
      * @return void
      */
