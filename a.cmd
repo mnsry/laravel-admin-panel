@@ -31,4 +31,3 @@ doskey paql=php artisan queue:listen $*
 doskey pasr=php artisan schedule:run $*
 doskey pamreq=php artisan make:request $*
 doskey pamres=php artisan make:resource $*
-doskey gp=git push origin mansory $*
