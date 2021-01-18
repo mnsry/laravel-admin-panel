@@ -15,7 +15,7 @@ use App\Policies\UserPolicy;
 class AuthServiceProvider extends ServiceProvider
 {
     /**
-     * The policy mappings for the application.
+     * @note Register Model Whit Policy
      *
      * @var array
      */
