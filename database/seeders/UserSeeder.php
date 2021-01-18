@@ -9,7 +9,8 @@ use Illuminate\Support\Str;
 class UserSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * @note Create User
+     * @note For Login, email: m@m.com password: password
      *
      * @return void
      */

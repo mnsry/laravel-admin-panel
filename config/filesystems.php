@@ -55,10 +55,18 @@ return [
             'visibility' => 'public',
         ],
 
+        /**
+         * @note host disk has Custom Storage
+         * @note Should Create SubDomain InTO Your Host
+         * @note Custom Root: For Save File, And Get Path Of { @see env }
+         * @note Custom Url: For Read File, And Get Path Of { @see env }
+         */
         'host' => [
             'driver' => 'local',
-            'root' => storage_path(env('APP_SUB_URL_ROOT')),
-            'url' => env('APP_SUB_URL'),
+            // Folder Path, For Save File
+            'root' => storage_path(env('APP_STORAGE_ROOT')),
+            // Url Path, For Read Or Get File
+            'url' => env('APP_STORAGE_URL'),
             'visibility' => 'public',
         ],
 
