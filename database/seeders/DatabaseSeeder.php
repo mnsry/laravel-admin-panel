@@ -6,6 +6,9 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+    /**
+     * @note You Should Run Seeder For Start App
+     */
     public function run()
     {
         $this->call(SidebarSeeder::class);
