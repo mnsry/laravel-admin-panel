@@ -6,11 +6,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateProduct extends FormRequest
 {
-    public function authorize()
-    {
-        return true;
-    }
-
+    /**
+     * @note Validation For Edit Product
+     * @see \App\Http\Controllers\Panel\ProductController::update
+     */
     public function rules()
     {
         return [
@@ -18,5 +17,10 @@ class UpdateProduct extends FormRequest
             'body' => 'required|min:20',
             'image' => 'nullable|image'
         ];
+    }
+
+    public function authorize()
+    {
+        return true;
     }
 }
