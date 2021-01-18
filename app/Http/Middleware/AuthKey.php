@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class AuthKey
 {
     /**
-     * Handle an incoming request.
+     * @note This Middleware Not Use In Project
+     * @note If Header Has { 'APP_KEY': 'ABCD1234' } Next Middleware
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
