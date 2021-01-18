@@ -31,6 +31,6 @@ class CreatePersonalAccessTokensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_access_tokens');
+        Schema::dropIfExists('personal_access_tokens');
     }
 }
