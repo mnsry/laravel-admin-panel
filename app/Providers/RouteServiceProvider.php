@@ -46,6 +46,15 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+            /**
+             * @note For Doc, We Create File Route InTo 'resources/views/doc/route.php'
+             * @note You Can Remove Down Code, Line 49 - 57
+             */
+            if (file_exists(base_path('resources/views/doc/route.php'))) {
+                Route::middleware('web')
+                    ->prefix('doc')->name('doc.')
+                    ->group(base_path('resources/views/doc/route.php'));
+            }
         });
     }
 
