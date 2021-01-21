@@ -5,14 +5,8 @@
         <div class="row d-flex justify-content-center">
             <img
                 class="img-fluid"
-                src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg"
-                alt="Laravel"
-            >
-            <img
-                class="img-fluid"
                 src="{{asset('images/nuxt.png')}}"
-                alt="Nuxt.js"
-                width="100"
+                alt="nuxt"
             >
         </div>
 
@@ -33,22 +27,14 @@
             </p>
         </div>
 
-        <div class="row">
-            <div align="center">
-                <p> -= پنل ادمین با لاراول و ناکست جی اس و ویوتی فای =- </p>
-                <br>
-                <p>نسخه دسکتاپ</p>
-                <img src="{{asset('images/demo.png')}}" class="img-fluid" height="400" alt="admin-panel">
-                <br><br>
-                <p>نسخه موبایل</p>
-                <img src="{{asset('images/demo-mobile.png')}}" class="img-fluid" height="400" alt="admin-panel">
-            </div>
-        </div>
-
         <hr>
 
-        <div class="row d-flex justify-content-center">
-            <p>داکیومنت بزودی </p>
+        <div class="text-right">
+            <p><a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank">آموزش تصویری در کانال یوتیوب</a></p>
+            <p>اگر توسعه دهنده هستید می توانید پروژه را فورک کنید و کانتری بیوت کنید تا از کدهای شما هم دیگران بتوانند استفاده کنند</p>
+            <p>این پنل بدون سرور هیچ استفاده ای ندارد شما باید پروژه لاراول داخل همین پیج گیت هاب را هم دریافت کنید و سرور رو ران کنید</p>
+            <p>بعد از دریافت باید یارن نصب یا ان پی ام نصب را اجرا کنید و فایل دات ای ان وی را بسازید و محتویات ای ان وی اگزمپل رو کپی کنید</p>
+            <p>خب امیدواریم که کارکند. درسته؟</p>
         </div>
     </div>
 @endsection
