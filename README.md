@@ -1,8 +1,8 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://discord.gg/ENuwQP6H" target="_blank"><img src="public/images/discord.png" width="118"  alt="youtube"></a>
-<a href="https://www.laranuxt.ir" target="_blank"><img src="public/images/www.png" width="115"  alt="youtube"></a>
+<a href="https://discord.gg/pJBWehRQud" target="_blank"><img src="public/images/discord.png" width="118"  alt="discord"></a>
+<a href="https://www.laranuxt.ir" target="_blank"><img src="public/images/www.png" width="115"  alt="laranuxt"></a>
 <a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank"><img src="public/images/youtube.png" width="111"  alt="youtube"></a>
 <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="public/images/license.png" width="98" alt="License"></a>
 </p>
