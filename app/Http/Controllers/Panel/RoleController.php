@@ -86,7 +86,7 @@ class RoleController extends Controller
 
         return response()->json([
             'message'=>[
-                ['پیام سرور: نقش حذف شد']
+                ['پیام سرور: برای تست پنل نقش حذف نمی شود']
             ]
         ], 200);
     }

@@ -95,11 +95,11 @@ class ProductController extends Controller
     {
         $this->authorize('delete', Product::class);
 
-        $product->delete();
+//        $product->delete();
 
         return response()->json([
             'message'=>[
-                ['پیام سرور: محصولات حذف شد']
+                ['پیام سرور: برای تست پنل محصول حذف نمی شود']
             ]
         ], 200);
     }

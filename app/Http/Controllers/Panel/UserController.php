@@ -83,7 +83,22 @@ class UserController extends Controller
             'mobile' => $request->mobile,
             'avatar' => $path
         ]);
-        $user->roles()->sync(json_decode($request->roles));
+
+        $roles = json_decode($request->roles);
+        
+        // Cant Remove Role Admin Of User
+        if ($user->id == 1) {
+            if (! in_array(1, $roles)) {
+                return (UserResource::make(User::find($user->id)))
+                    ->additional([
+                        'message'=>[
+                            ['پیام سرور: برای تست پنل نقش ادمین را نمی توانید بردارید']
+                        ]
+                    ]);
+            }
+        }
+
+        $user->roles()->sync($roles);
 
         return (UserResource::make(User::find($user->id)))
             ->additional([
@@ -102,7 +117,7 @@ class UserController extends Controller
 
         return response()->json([
             'message'=>[
-                ['پیام سرور: کاربر حذف شد']
+                ['پیام سرور: برای تست پنل کاربر حذف نمی شود']
             ]
         ], 200);
     }
