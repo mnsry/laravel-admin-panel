@@ -67,6 +67,18 @@ class RoleController extends Controller
         $this->authorize('edit', Role::class);
 
         $role->update($request->all());
+
+        // Cant Remove Permissions Of Role
+        if ($role->id == 1) {
+            return (RoleResource::make(Role::find($role->id)))
+                ->additional([
+                    'message'=>[
+                        ['نقش ' .$role->display_name .' تغییر یافت.'],
+                        [' برای تست پنل کلید ها را نقش ادمین نمی توانید بردارید']
+                    ]
+                ]);
+        }
+
         $role->permissions()->sync($request->permissions);
 
         return (RoleResource::make(Role::find($role->id)))
