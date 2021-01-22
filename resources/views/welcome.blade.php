@@ -54,7 +54,8 @@
         <hr>
 
         <div class="row d-flex justify-content-center">
-            <p></p>
+            <p>تعداد بازدید :</p>
+            <span>{{ \App\Models\User\PersonalNumberVisit::find(1)->seen }}</span>
         </div>
     </div>
 @endsection

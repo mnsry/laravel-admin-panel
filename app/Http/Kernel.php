@@ -21,6 +21,10 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        /**
+         * @note Add Number Of Visits
+         */
+        \App\Http\Middleware\NumberVisits::class,
     ];
 
     /**
