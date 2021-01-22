@@ -85,7 +85,7 @@ class UserController extends Controller
         ]);
 
         $roles = json_decode($request->roles);
-        
+
         // Cant Remove Role Admin Of User
         if ($user->id == 1) {
             if (! in_array(1, $roles)) {
