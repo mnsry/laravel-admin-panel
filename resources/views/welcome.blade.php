@@ -12,7 +12,7 @@
                 class="img-fluid"
                 src="{{asset('images/nuxt.png')}}"
                 alt="Nuxt.js"
-                width="100"
+                width="150"
             >
         </div>
 
@@ -33,10 +33,16 @@
             </p>
         </div>
 
+
+
         <div class="row">
             <div align="center">
                 <p> -= پنل ادمین با لاراول و ناکست جی اس و ویوتی فای =- </p>
-                <br>
+                <br><br>
+                <hr>
+                <a class="btn btn-outline-primary" href="https://nuxt.laranuxt.ir" target="_blank">نمایش دمو</a>
+                <hr>
+                <br><br>
                 <p>نسخه دسکتاپ</p>
                 <img src="{{asset('images/demo.png')}}" class="img-fluid" height="400" alt="admin-panel">
                 <br><br>
@@ -48,7 +54,7 @@
         <hr>
 
         <div class="row d-flex justify-content-center">
-            <p>داکیومنت بزودی </p>
+            <p></p>
         </div>
     </div>
 @endsection

@@ -19,6 +19,9 @@
  <p><img src="public/images/demo-mobile.png" height="400"  alt="admin-panel"></p>
 </div>
 
+## <div align="right">نمایش دمو</div>
+<p align="center"><a href="https://nuxt.laranuxt.ir" target="_blank">نمایش دمو</a></p>
+
 ## <div align="right">راهنمای نصب</div>
 
 <div align="right">
@@ -31,4 +34,3 @@
 
 ## <div align="right">مجوز برنامه</div>
 <p align="right"><a href="https://opensource.org/licenses/MIT" target="_blank">MIT license </a>این پنل ادمین کد باز هست و تحت مجوز</p>
-
