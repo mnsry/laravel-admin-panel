@@ -19,7 +19,9 @@ class BrowseAdmin
     {
         if (! Auth::guest()) {
             $user = Auth::user();
-            return $user->hasPermission('browse_admin') ? $next($request) : abort(403, 'دسترسی وجود ندارد!');
+            return $user->hasPermission('browse_admin')
+                ? $next($request)
+                : abort(403, 'دسترسی وجود ندارد!');
         }
         return abort(401, 'ابتدا باید وارد شوید!');
     }
