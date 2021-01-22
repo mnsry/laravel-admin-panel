@@ -82,7 +82,7 @@ class RoleController extends Controller
     {
         $this->authorize('delete', Role::class);
 
-        $role->delete();
+        // $role->delete();
 
         return response()->json([
             'message'=>[

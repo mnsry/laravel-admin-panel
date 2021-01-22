@@ -98,7 +98,7 @@ class UserController extends Controller
     {
         $this->authorize('delete', User::class);
 
-        $user->delete();
+        // $user->delete();
 
         return response()->json([
             'message'=>[

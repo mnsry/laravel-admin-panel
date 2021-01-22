@@ -47,6 +47,9 @@
                         <li class="nav-item {{ Request::is('/') ? "active" : '' }}">
                             <a class="nav-link" href="/">خانه</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://github.com/mnsry">گیت هاب</a>
+                        </li>
                     </ul>
 
                     <!-- Left Side Of Navbar -->

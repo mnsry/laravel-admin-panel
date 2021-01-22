@@ -16,8 +16,8 @@
                 <a href="https://discord.gg/pJBWehRQud" target="_blank">
                     <img src="{{asset('images/discord.png')}}" width="118" alt="discord">
                 </a>
-                <a href="https://www.laranuxt.ir" target="_blank">
-                    <img src="{{asset('images/www.png')}}" width="115" alt="laranuxt">
+                <a href="https://github.com/mnsry" target="_blank">
+                    <img src="{{asset('images/github.png')}}" width="122" alt="github">
                 </a>
                 <a href="https://www.youtube.com/playlist?list=PLXChBR5rCkrheZRydB6C-ohLMGL1Q6gGz" target="_blank">
                     <img src="{{asset('images/youtube.png')}}" width="111" alt="youtube">
