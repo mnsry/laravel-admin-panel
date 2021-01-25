@@ -2,6 +2,7 @@
 
 namespace App\Models\User;
 
+use App\Models\Message\Message;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -46,5 +47,11 @@ class User extends Authenticatable
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+
+    //Relation One User With Many Model Message
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
     }
 }
