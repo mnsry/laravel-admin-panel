@@ -16,8 +16,8 @@ class MessageController extends Controller
     // send unique to_user column
     public function index()
     {
-        $message = auth()->user()->messages->pluck('to_user')->unique();
-        return (MessageResource::collection(Message::find($message)))
+        $message = auth()->user()->messages->unique('to_user');
+        return (MessageResource::collection($message))
             ->additional([
                 'message'=>[
                     ['پیام ها از سرور فرستاده شد']

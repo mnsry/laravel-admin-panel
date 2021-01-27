@@ -21,6 +21,7 @@ class Message extends JsonResource
             'user_id' => $this->user_id,
             'message' => $this->message,
             'to_user' => $this->to_user,
+            'created_at' => $this->created_at,
             /**
              * @note auth_user has Relation { @see \App\Models\Message\Message::user() }
              * @note to_user_info has Relation { @see \App\Models\Message\Message::to_user_info() }

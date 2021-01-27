@@ -52,6 +52,6 @@ class User extends Authenticatable
     //Relation One User With Many Model Message
     public function messages()
     {
-        return $this->hasMany(Message::class);
+        return $this->hasMany(Message::class)->orderByDesc('id');
     }
 }
