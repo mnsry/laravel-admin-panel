@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateMessagesTable extends Migration
 {
     /**
-     * Run the migrations.
+     * @note
      *
      * @return void
      */
@@ -17,6 +17,7 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('message');
+            $table->foreignId('to_user')->constrained('users');
             $table->timestamps();
         });
     }

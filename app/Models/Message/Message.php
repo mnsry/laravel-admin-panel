@@ -12,11 +12,17 @@ class Message extends Model
      */
 
     // Add Column, If Column Use InTo Form
-    protected $fillable = ['message'];
+    protected $fillable = ['message', 'to_user'];
 
-    // Relation Many Product With One Model User
+    // Relation Many Message With One Model User
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    // Relation Many Message With One Model User
+    public function to_user_info()
+    {
+        return $this->belongsTo(User::class, 'to_user');
     }
 }
