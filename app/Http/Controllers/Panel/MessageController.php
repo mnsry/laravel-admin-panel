@@ -25,10 +25,22 @@ class MessageController extends Controller
             ]);
     }
 
-   //
+   // id has user
     public function show($id)
     {
-        return response('show');
+        // all auth messages to other user by id
+        $auth = auth()->user()->messages->where('to_user', $id);
+        // id just auth->user
+        $to_my_message = Message::all()->where('user_id', $id)->where('to_user', auth()->id());
+        // merge
+        $merge = $auth->merge($to_my_message);
+        return (MessageResource::collection($merge))
+            ->additional([
+//                'to_my_message' => $to_my_message,
+                'message'=>[
+                    ['پیام های با موفقیت ارسال شد.']
+                ]
+            ]);
     }
 
     //
