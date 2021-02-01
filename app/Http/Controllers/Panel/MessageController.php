@@ -52,10 +52,11 @@ class MessageController extends Controller
     //
     public function update(Request $request, $id)
     {
-        return auth()->user()->messages()->create([
+        auth()->user()->messages()->create([
             'to_user' => $id,
             'message' => $request->message,
         ]);
+        return response()->json(['message' => [['پیام شما ارسال شد']]]);
     }
 
     //
