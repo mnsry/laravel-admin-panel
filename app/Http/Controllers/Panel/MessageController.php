@@ -52,16 +52,20 @@ class MessageController extends Controller
     //
     public function update(Request $request, $id)
     {
-        $user = auth()->user()->messages()->create([
+        return auth()->user()->messages()->create([
             'to_user' => $id,
             'message' => $request->message,
         ]);
-        return response('update');
     }
 
     //
     public function destroy($id)
     {
-        return response('delete');
+        $message = Message::find($id);
+        if ($message->user_id === auth()->id()) {
+            $message->delete();
+            return response()->json(['message' => [['پیام شما حذف شد']]]);
+        }
+        return response()->json(['message' => [['شما پیام این شخص را نمی توانید حذف کنید']]]);
     }
 }
