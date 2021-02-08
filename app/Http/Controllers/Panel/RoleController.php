@@ -94,7 +94,11 @@ class RoleController extends Controller
     {
         $this->authorize('delete', Role::class);
 
-        // $role->delete();
+        // cant seeder delete
+        $dontDelete = [1, 2];
+        if (!in_array($role->id, $dontDelete)) {
+            $role->delete();
+        }
 
         return response()->json([
             'message'=>[

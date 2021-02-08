@@ -26,7 +26,8 @@ class Permission extends Model
             'roles' => 'نقش ها',
             'sidebars' => 'ایتم منو',
             'users' => 'کاربران',
-            'products' => 'محصولات'
+            'products' => 'محصولات',
+            'categories' => 'دسته ها',
         ];
     }
 

@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use App\Models\Category\Category;
+use App\Policies\CategoryPolicy;
 use App\Models\Product\Product;
 use App\Policies\ProductPolicy;
 use App\Models\Role\Role;
@@ -21,6 +23,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        Category::class => CategoryPolicy::class,
         Product::class => ProductPolicy::class,
         Role::class => RolePolicy::class,
         Sidebar::class => SidebarPolicy::class,

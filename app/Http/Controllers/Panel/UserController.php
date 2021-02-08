@@ -113,7 +113,11 @@ class UserController extends Controller
     {
         $this->authorize('delete', User::class);
 
-        // $user->delete();
+        // cant seeder delete
+        $dontDelete = [1, 2, 3];
+        if (!in_array($user->id, $dontDelete)) {
+             $user->delete();
+        }
 
         return response()->json([
             'message'=>[
