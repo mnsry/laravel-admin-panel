@@ -117,6 +117,11 @@ class UserController extends Controller
         $dontDelete = [1, 2, 3];
         if (!in_array($user->id, $dontDelete)) {
              $user->delete();
+            return response()->json([
+                'message'=>[
+                    ['پیام سرور: حذف شد']
+                ]
+            ], 200);
         }
 
         return response()->json([
