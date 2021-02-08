@@ -99,6 +99,11 @@ class ProductController extends Controller
         $dontDelete = [1, 2, 3, 4];
         if (!in_array($product->id, $dontDelete)) {
             $product->delete();
+            return response()->json([
+                'message'=>[
+                    ['پیام سرور: محصول حذف شد']
+                ]
+            ], 200);
         }
 
         return response()->json([

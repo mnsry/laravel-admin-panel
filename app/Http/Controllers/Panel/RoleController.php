@@ -98,6 +98,11 @@ class RoleController extends Controller
         $dontDelete = [1, 2];
         if (!in_array($role->id, $dontDelete)) {
             $role->delete();
+            return response()->json([
+                'message'=>[
+                    ['پیام سرور: حذف شد']
+                ]
+            ], 200);
         }
 
         return response()->json([
