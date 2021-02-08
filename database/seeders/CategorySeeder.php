@@ -15,30 +15,30 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'title' => 'موبایل'
+            'category' => 'موبایل'
         ]);
 
         Category::create([
-            'title' => 'لپ تاپ'
+            'category' => 'لپ تاپ'
         ]);
 
         $category3 = Category::create([
-            'title' => 'گوشی موبایل',
+            'category' => 'گوشی موبایل',
             'category_id' => 1,
         ]);
 
         Category::create([
-            'title' => 'لوازم جانبی موبایل',
+            'category' => 'لوازم جانبی موبایل',
             'category_id' => 1,
         ]);
 
         $category5 = Category::create([
-            'title' => 'لبتاب و الترا بوک',
+            'category' => 'لبتاب و الترا بوک',
             'category_id' => 2,
         ]);
 
         Category::create([
-            'title' => 'لوازم لبتاپ',
+            'category' => 'لوازم لبتاپ',
             'category_id' => 2,
         ]);
     }

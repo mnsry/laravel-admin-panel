@@ -8,7 +8,7 @@ class Brand extends Model
 {
     protected $table = 'category_brands';
 
-    protected $guarded = [];
+    protected $fillable = ['brand'];
 
     public function categories()
     {

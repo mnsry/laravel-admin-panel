@@ -95,7 +95,11 @@ class ProductController extends Controller
     {
         $this->authorize('delete', Product::class);
 
-//        $product->delete();
+        // cant seeder delete
+        $dontDelete = [1, 2, 3, 4];
+        if (!in_array($product->id, $dontDelete)) {
+            $product->delete();
+        }
 
         return response()->json([
             'message'=>[
