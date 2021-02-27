@@ -24,6 +24,7 @@ doskey parc=php artisan route:clear $*
 doskey paoc=php artisan optimize:clear $*
 doskey pamrs=php artisan migrate:fresh --seed $*
 
+
 doskey paqw=php artisan queue:work $*
 doskey paql=php artisan queue:listen $*
 doskey pasr=php artisan schedule:run $*
